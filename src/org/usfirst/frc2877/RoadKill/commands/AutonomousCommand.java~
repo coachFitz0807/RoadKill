@@ -13,8 +13,8 @@ import org.usfirst.frc2877.RoadKill.Robot;
 /**
  *
  */
-public class  Drive2 extends Command {
-    public Drive2() {
+public class  AutonomousCommand extends Command {
+    public AutonomousCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
