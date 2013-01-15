@@ -33,11 +33,11 @@ public class  Drive1 extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if running != true {
+        if (running != true) {
             running = true;
             timer.reset() ;
         }
-        Robot.driveTrain.runMotor1(speed);
+        Robot.driveTrain.runMotor1( 0.5 );
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
