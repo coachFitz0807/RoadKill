@@ -8,6 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 package org.usfirst.frc2877.RoadKill;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc2877.RoadKill.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
