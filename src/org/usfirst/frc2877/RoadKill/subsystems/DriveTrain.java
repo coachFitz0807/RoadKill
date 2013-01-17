@@ -35,4 +35,8 @@ public class DriveTrain extends Subsystem {
     public void runMotor1( double speed ) {
         jaguar1.set(speed);
     }
+    
+    public void drive ( double x, double y ) {
+        robotDrive21.arcadeDrive(x, y);
+    }
 }
