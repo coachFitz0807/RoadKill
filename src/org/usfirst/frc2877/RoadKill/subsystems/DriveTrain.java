@@ -33,6 +33,10 @@ public class DriveTrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void runMotor1( double speed ) {
+        System.out.println("driveTrain.runMotor1. About to call jaguar1.set()");
+        System.out.print ("The value of speed is ");
+        System.out.println(speed);
+ 
         jaguar1.set(speed);
     }
     
