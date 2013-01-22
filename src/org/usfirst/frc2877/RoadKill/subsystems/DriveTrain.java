@@ -39,7 +39,13 @@ public class DriveTrain extends Subsystem {
  
         jaguar1.set(speed);
     }
-    
+    public void runMotor2 ( double speed ) {
+        System.out.println("drivetrain.runMotor2. About to call jaguar2.set()");
+        System.out.print("The value of speed is ");
+        System.out.println(speed); 
+        
+        jaguar2.set(speed);
+    }
     public void drive ( double x, double y ) {
         robotDrive21.arcadeDrive(x, y);
     }
