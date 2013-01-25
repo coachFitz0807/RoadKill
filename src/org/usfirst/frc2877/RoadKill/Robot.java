@@ -34,6 +34,7 @@ public class Robot extends IterativeRobot {
     private Drive2 d2;
     private Drive d;
     private SetSpike spike1;
+    private SetServo servo1;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -49,6 +50,7 @@ public class Robot extends IterativeRobot {
        d2 = new Drive2();
        d = new Drive();
        spike1 = new SetSpike();
+       servo1 = new SetServo();
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
         // which commands extend), subsystems are not guaranteed to be
@@ -88,6 +90,7 @@ public class Robot extends IterativeRobot {
 //        d2.start();
           d.start();
           spike1.start();
+          servo1.start();
     }
     /**
      * This function is called periodically during operator control

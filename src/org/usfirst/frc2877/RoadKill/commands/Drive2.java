@@ -14,7 +14,7 @@ import org.usfirst.frc2877.RoadKill.Robot;
 /**
  *
  */
-public class  Drive2 extends Command {
+public class  Drive2 extends Command { 
     public Drive2() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis); 
@@ -41,12 +41,12 @@ public class  Drive2 extends Command {
            timer.reset() ;
           }
       System.out.println("Drive2.execute.  About to call driveTrain.runMotor2");
-        Robot.driveTrain.runMotor2( 0.5 );
+        Robot.driveTrain.runMotor2( 0.25 );
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         time = timer.get();
-        System.out.print ("The value of time is ");
+        System.out.print ("d2 isFinished. The value of time is ");
         System.out.println(time);
        if (time > 3.0) { 
           System.out.println("Drive2.isFinished");

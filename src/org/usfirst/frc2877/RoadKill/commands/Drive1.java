@@ -43,13 +43,13 @@ public class  Drive1 extends Command {
            timer.reset() ;
           }
       System.out.println("Drive1.execute.  About to call driveTrain.runMotor1");
-        Robot.driveTrain.runMotor1( 1.0 );
+        Robot.driveTrain.runMotor1( 0.25 );
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
 //        return isTimedOut();
         time = timer.get();
-        System.out.print ("The value of time is ");
+        System.out.print ("d1 isFinished; The value of time is ");
         System.out.println(time);
        if (time > 3.0) { 
           System.out.println("Drive1.isFinished");
