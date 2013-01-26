@@ -63,6 +63,7 @@ public class OI {
         
         joystickButton1 = new JoystickButton(joystick1, 1);
         joystickButton1.whenPressed(new SetSpike());
+        joystickButton4 = new JoystickButton (joystick1, 4);
         joystickButton4.whenPressed(new SetServo());
 	    
         // SmartDashboard Buttons

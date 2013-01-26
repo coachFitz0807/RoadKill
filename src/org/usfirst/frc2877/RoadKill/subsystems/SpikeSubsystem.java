@@ -43,6 +43,7 @@ public class SpikeSubsystem extends Subsystem {
     }
     
     public void servoSet (double position) {
-       
+       servo1.set (position);
+       System.out.println("ServoSet position out: " + position);
    }
 }
