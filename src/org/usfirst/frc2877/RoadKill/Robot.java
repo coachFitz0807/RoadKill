@@ -89,8 +89,8 @@ public class Robot extends IterativeRobot {
 //        System.out.println("About to start Drive2");
 //        d2.start();
           d.start();
-          spike1.start();
-          servo1.start();
+//          spike1.start();
+//          servo1.start();
     }
     /**
      * This function is called periodically during operator control

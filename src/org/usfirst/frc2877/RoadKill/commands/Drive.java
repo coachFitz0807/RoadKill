@@ -30,6 +30,10 @@ public class  Drive extends Command {
         double x = Robot.oi.joystick1.getX();
         double y = Robot.oi.joystick1.getY();
         Robot.driveTrain.drive(x, y);
+ //       double whiteWheel = -0.40;
+ //       double blackWheel = -0.70;
+ //       Robot.driveTrain.drive(whiteWheel, blackWheel);
+
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
