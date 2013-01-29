@@ -37,10 +37,11 @@ public class  Drive extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Robot.driveTrain.limitSwitch.get();
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.driveTrain.drive(0, 0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
