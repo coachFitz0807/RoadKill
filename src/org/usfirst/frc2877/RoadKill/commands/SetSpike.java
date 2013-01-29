@@ -24,6 +24,8 @@ public class  SetSpike extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+    //    Robot.spikeSubsystem.spikeSet(Robot.oi.joystickButton1.get());
+        // Spike set in initialize causes it to run continually once pressed
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
