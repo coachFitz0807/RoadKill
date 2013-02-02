@@ -8,12 +8,18 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 package org.usfirst.frc2877.RoadKill.commands;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc2877.RoadKill.Robot;
 /**
  *
  */
 public class  Drive extends Command {
+    double firstWheel = 1.00;
+    double secondWheel = 1.00;
+    int tens = 10;
+    
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -27,13 +33,21 @@ public class  Drive extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        double x = Robot.oi.joystick1.getX();
-        double y = Robot.oi.joystick1.getY();
-        Robot.driveTrain.drive(x, y);
- //       double whiteWheel = -0.40;
- //       double blackWheel = -0.70;
+ //       double x = Robot.oi.joystick1.getX();
+ //       double y = Robot.oi.joystick1.getY();
+ //       Robot.driveTrain.drive(x, y);
  //       Robot.driveTrain.drive(whiteWheel, blackWheel);
-
+          if (--tens==0)
+          { 
+              if (Robot.oi.joystickButton1.get()) firstWheel -= 0.01;
+              if (Robot.oi.joystickButton2.get()) secondWheel += 0.01;
+              if (Robot.oi.joystickButton3.get()) secondWheel -= 0.01;
+              if (Robot.oi.joystickButton4.get()) firstWheel += 0.01;
+              tens = 10;
+              SmartDashboard.putNumber("Firstwheel:", firstWheel);
+              SmartDashboard.putNumber("Secondwheel:", secondWheel);
+              Robot.driveTrain.drive(firstWheel, secondWheel);
+          }
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
