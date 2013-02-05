@@ -25,9 +25,11 @@ public class RobotMap {
 //    public static CANJaguar cANDriveTrainCANJaguar1;
 //    public static CANJaguar cANDriveTrainCANJaguar2;
 //    public static RobotDrive cANDriveTrainRobotDrive21;
-    public static RobotDrive driveTrainRobotDrive21;
+    public static RobotDrive driveTrainRobotDrive41;
     public static Jaguar driveTrainJaguar1;
     public static Jaguar driveTrainJaguar2;
+    public static Jaguar driveTrainJaguar3;
+    public static Jaguar driveTrainJaguar4;
     public static Relay spikeSubSystemSpike1;
     public static SpeedController testSubSystemSpeedController1;
     public static Servo servo1;
@@ -56,23 +58,30 @@ public class RobotMap {
 //        cANDriveTrainRobotDrive21.setSensitivity(0.5);
 //        cANDriveTrainRobotDrive21.setMaxOutput(1.0);
         
-        driveTrainJaguar1 = new Jaguar(3);
+        driveTrainJaguar1 = new Jaguar(1);
         driveTrainJaguar2 = new Jaguar(2);
+        driveTrainJaguar3 = new Jaguar(3);
+        driveTrainJaguar4 = new Jaguar(4);
   	
-        driveTrainRobotDrive21 = new RobotDrive(driveTrainJaguar1,driveTrainJaguar2);
+        driveTrainRobotDrive41 = new RobotDrive(driveTrainJaguar1,driveTrainJaguar4,driveTrainJaguar2,driveTrainJaguar3);
         
-        driveTrainRobotDrive21.setSafetyEnabled(false);
-        driveTrainRobotDrive21.setExpiration(10);
-        driveTrainRobotDrive21.setSensitivity(0.5);
-        driveTrainRobotDrive21.setMaxOutput(1.0);
+        
+        
+        driveTrainRobotDrive41.setSafetyEnabled(false);
+        driveTrainRobotDrive41.setExpiration(10);
+        driveTrainRobotDrive41.setSensitivity(0.5);
+        driveTrainRobotDrive41.setMaxOutput(1.0);
+        driveTrainRobotDrive41.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+        driveTrainRobotDrive41.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+      
 
-        spikeSubSystemSpike1 = new Relay(1,1,Direction.kForward);
+        spikeSubSystemSpike1 = new Relay(1,5,Direction.kForward);
 	LiveWindow.addActuator("SpikeSubSystem", "Spike 1", spikeSubSystemSpike1);
         
-        testSubSystemSpeedController1 = new Victor(1, 1);
-	LiveWindow.addActuator("TestSubSystem", "Speed Controller 1", (Victor) testSubSystemSpeedController1);
+//        testSubSystemSpeedController1 = new Victor(1, 1);
+//	LiveWindow.addActuator("TestSubSystem", "Speed Controller 1", (Victor) testSubSystemSpeedController1);
         
-        servo1 = new Servo(4);
+        servo1 = new Servo(6);
         
         limitSwitch = new DigitalInput(1);
         
