@@ -35,6 +35,7 @@ public class Robot extends IterativeRobot {
     private Drive d;
     private SetSpike spike1;
     private SetServo servo1;
+    int m_count = 50;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -89,14 +90,15 @@ public class Robot extends IterativeRobot {
 //        System.out.println("About to start Drive2");
 //        d2.start();
           d.start();
-          spike1.start();
-          servo1.start();
+//          spike1.start();
+//          servo1.start();
     }
     /**
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
     }
     /**
      * This function called periodically during test mode

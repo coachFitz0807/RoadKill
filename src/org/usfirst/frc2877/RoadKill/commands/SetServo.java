@@ -29,7 +29,7 @@ public class SetServo extends Command {
           direction = -1;
       }
      position += direction * 0.1;
-             System.out.println("SetServo.execute. Current position is: " + position);
+             //System.out.println("SetServo.execute. Current position is: " + position);
      Robot.spikeSubsystem.servoSet(position);
     }
     // Make this return true when this Command no longer needs to run execute()
