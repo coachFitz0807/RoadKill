@@ -96,6 +96,8 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+        double voltage1 = RobotMap.infraRedSensor1.getVoltage();
+        System.out.println("IR sensor voltage = " + voltage1);
         Scheduler.getInstance().run();
     }
     /**
