@@ -25,16 +25,22 @@ public class SetServo extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        // just set it to full in one step
       if (position > .95) {  
           direction = -1;
       }
      position += direction * 0.1;
              System.out.println("SetServo.execute. Current position is: " + position);
+//        if (position == 0) {
+//            position = 90;
+//        } else position = 0;
+//        System.out.println("In setServo.execute. Position = " + position);
      Robot.spikeSubsystem.servoSet(position);
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return position < 0.05;
+//        return true;
     }
     // Called once after isFinished returns true
     protected void end() {
